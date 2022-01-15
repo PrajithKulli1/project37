@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<!-- saved from url=(0032)http://127.0.0.1:5500/index.html -->
+<html lang="en" dir="ltr" class="js-focus-visible" data-js-focus-visible=""><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <title>MyQuiz Game</title>
+    <script src="./MyQuiz Game_files/p5.min.js.download"></script>
+    <script src="./MyQuiz Game_files/p5.dom.min.js.download"></script>
+    <script src="./MyQuiz Game_files/p5.sound.min.js.download"></script>
+    <script src="./MyQuiz Game_files/p5.play.js.download"></script>
+
+   <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="./MyQuiz Game_files/firebase-app.js.download"></script>
+<script src="./MyQuiz Game_files/firebase-database.js.download"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyAlYTDtmHd5ebKMonZUo7lnweOzDdBo40E",
+    authDomain: "myquiz-game.firebaseapp.com",
+    databaseURL: "https://myquiz-game-default-rtdb.firebaseio.com",
+    projectId: "myquiz-game",
+    storageBucket: "myquiz-game.appspot.com",
+    messagingSenderId: "135491178213",
+    appId: "1:135491178213:web:7fd97cb4bc6b0b0b4c0e0c"
+  };
+
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+</script>
+    <script src="./MyQuiz Game_files/Contestant.js.download"></script>
+    <script src="./MyQuiz Game_files/Question.js.download"></script>
+    <script src="./MyQuiz Game_files/Quiz.js.download"></script>
+    <link rel="stylesheet" type="text/css" href="./MyQuiz Game_files/style.css">
+  <style type="text/css">
+@font-face {
+  font-weight: 400;
+  font-style:  normal;
+  font-family: 'Circular-Loom';
+
+  src: url('https://cdn.loom.com/assets/fonts/circular/CircularXXWeb-Book-cd7d2bcec649b1243839a15d5eb8f0a3.woff2') format('woff2');
+}
+
+@font-face {
+  font-weight: 500;
+  font-style:  normal;
+  font-family: 'Circular-Loom';
+
+  src: url('https://cdn.loom.com/assets/fonts/circular/CircularXXWeb-Medium-d74eac43c78bd5852478998ce63dceb3.woff2') format('woff2');
+}
+
+@font-face {
+  font-weight: 700;
+  font-style:  normal;
+  font-family: 'Circular-Loom';
+
+  src: url('https://cdn.loom.com/assets/fonts/circular/CircularXXWeb-Bold-83b8ceaf77f49c7cffa44107561909e4.woff2') format('woff2');
+}
+
+@font-face {
+  font-weight: 900;
+  font-style:  normal;
+  font-family: 'Circular-Loom';
+
+  src: url('https://cdn.loom.com/assets/fonts/circular/CircularXXWeb-Black-bf067ecb8aa777ceb6df7d72226febca.woff2') format('woff2');
+}</style></head>
+  <body data-new-gr-c-s-check-loaded="14.1044.0" data-gr-ext-installed="">
+    <script src="./MyQuiz Game_files/sketch.js.download"></script>
+  <!-- Code injected by live-server -->
+<script type="text/javascript">
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+
+<canvas id="defaultCanvas0" class="p5Canvas" width="1700" height="800" style="width: 850px; height: 400px;"></canvas><h1 style="position: absolute; left: 350px; top: 0px; display: none;">MyQuiz Game</h1><input type="text" class="" style="position: absolute; left: 150px; top: 230px; display: none;"><input type="text" class="" style="position: absolute; left: 350px; top: 230px; display: none;"><button style="position: absolute; left: 290px; top: 300px; display: none;">Submit</button><button style="position: absolute; left: 360px; top: 300px;">Reset</button><h3 style="position: absolute; left: 150px; top: 80px;">Question:- What starts and ends with the letter ‘E’, but has only one letter? </h3><h4 style="position: absolute; left: 150px; top: 100px;">1: Everyone </h4><h4 style="position: absolute; left: 150px; top: 120px;">2: Envelope</h4><h4 style="position: absolute; left: 150px; top: 140px;">3: Estimate </h4><h4 style="position: absolute; left: 150px; top: 160px;">4: Example</h4></body><loom-container id="lo-engage-ext-container"><loom-shadow classname="resolved"></loom-shadow></loom-container><loom-container id="lo-companion-container"><loom-shadow classname="resolved"></loom-shadow></loom-container><grammarly-desktop-integration data-grammarly-shadow-root="true"></grammarly-desktop-integration></html>
